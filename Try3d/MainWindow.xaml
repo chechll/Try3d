@@ -1,0 +1,25 @@
+﻿<Window x:Class="Try3d.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:hx="http://helix-toolkit.org/wpf"
+        Title="3D Plot" Height="450" Width="800">
+
+    <Grid>
+        <!-- HelixViewport3D is used for rendering 3D content -->
+        <hx:HelixViewport3D x:Name="viewport3d" Background="White" ShowCoordinateSystem="True" ShowViewCube="True" ZoomExtentsWhenLoaded="True">
+
+            <!-- Camera -->
+            <hx:HelixViewport3D.Camera>
+                <PerspectiveCamera Position="10, 10, 10" LookDirection="-10,-10,-10" UpDirection="0,1,0" FieldOfView="45" />
+            </hx:HelixViewport3D.Camera>
+
+            <!-- Lights -->
+            <hx:DefaultLights />
+
+            <!-- The Model -->
+            <hx:PointsVisual3D x:Name="pointVisual" Size="3" Color="Red" />
+
+        </hx:HelixViewport3D>
+    </Grid>
+</Window>
+
